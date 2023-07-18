@@ -1,15 +1,14 @@
-#include<iostream>
-#include<string>
+#include <iostream>
 using namespace std;
-int main() 
+int main()
 {
-	string Name;
-	int birth ;
-	cout<<"Enter name :";
-	cin>>Name;
-	cout<<"Enter yaer of birth :";
-	cin>>birth;
-	cout<<"Your age ="<<2566-birth<<"year old \n";
-	system("pause"); 
-	return (0);
+	int money;
+	cout<<"Amount to be withdraw:";
+	cin>>money;
+	cout<<"1000:"<<(money/1000)<<endl;
+	cout<<"100:"<<(money%1000)/100<<endl;
+	cout<<"50:"<<((money%1000)%100)/50<<endl;
+	cout<<"20:"<<(((money%1000)%100)%50)/20<<endl;
+	system("pause");
+	return 0;
 }
