@@ -1,44 +1,32 @@
 #include <iostream>
+#include <string>
+#include <time.h>
 using namespace std;
-void CalCircle();
-void Rectangle();
-int main()
-{   char ch;
-	do{
-		cout<< "Program Calculate of Area."<<endl;
-		cout<<"****************************"<<endl;
-		cout<<"1. Circle "<<endl;
-		cout<<"2. Rectangle"<<endl;
-		cout<<"3. Exit"<<endl;
-		cout<<"Choose Menu :";
-		cin>>ch;
-		if (ch == '1') CalCircle();
-		else if (ch == '2')cout <<"Retangle"<<endl;
-			else if (ch =='3') cout <<"Exit"<<endl;
-				else cout <<"Wrong Menu"<<endl;
-	}while(ch != '3');
-	system ("pause");
-	return 0;
+void checknum(int r, int g); 
+int main() {
+    int g, r, t = 0;
+    cout << "###Welcome to guessing number game###\n";
+    srand(time(NULL));
+    r = 1 + rand() % 10;
+    cout << "Secret number has been chosen\n";
+    do {
+        cout << "Guess the number (1 to 10): ";
+        cin >> g;
+		t++;
+        checknum(r, g);
+    } while (r != g);
+
+    cout << "You made " << t << " guesses\n";
+
+    system("pause");
+    return 0;
 }
-void CalCircle()
-{
-	float Radius , Area,Circumference;
-	cout<<"Input radius :";
-	cin>> Radius;
-	Area = 3.14f*Radius*Radius;
-	Circumference = 2*3.14f*Radius;;
-	cout<<endl;
-	cout<<"Area of Circle :"<<Area <<endl;
-	cout<<"Circumference of Circle :"<<Circumference<<endl;
-	cout<<"Diameter of Circle :" <<(2*Radius)<<endl;
-}
-void Rectangle()
-{
-	float wide ,high,Area;
-	cout<<"Input wide :";
-	cin>>wide;
-	cout<<"Input  high : ";
-	cin>>high;
-	Area = wide*high;
-	cout<<"Area of Rectangle :"<<Area<<endl;
+
+void checknum(int r, int g  ) { 
+    if (g < r)
+        cout << "The secret number is higher\n";
+    else if (g > r)
+        cout << "The secret number is lower\n";
+    else
+        cout << "Congratulations!\nThe secret number is " << r << endl;
 }
