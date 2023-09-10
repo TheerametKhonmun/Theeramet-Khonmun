@@ -15,9 +15,7 @@ int main() {
 		t++;
         checknum(r, g);
     } while (r != g);
-
     cout << "You made " << t << " guesses\n";
-
     system("pause");
     return 0;
 }
