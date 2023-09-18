@@ -1,30 +1,37 @@
 #include <iostream>
+#include <iomanip>
 #include <string>
-#include <time.h>
 using namespace std;
-void checknum(int r, int g); 
-int main() {
-    int g, r, t = 0;
-    cout << "###Welcome to guessing number game###\n";
-    srand(time(NULL));
-    r = 1 + rand() % 10;
-    cout << "Secret number has been chosen\n";
-    do {
-        cout << "Guess the number (1 to 10): ";
-        cin >> g;
-		t++;
-        checknum(r, g);
-    } while (r != g);
-    cout << "You made " << t << " guesses\n";
-    system("pause");
-    return 0;
+int main()
+{
+int num[4],total=0,max=0,min=0;
+string name[4];
+for(int i=0;i<=3;i++)
+{	cout<<"Name["<<i<<"]:";
+	cin>>name [i];
+	cout<<"Score["<<i<<"]:";
+	cin>>num[i];
 }
-
-void checknum(int r, int g  ) { 
-    if (g < r)
-        cout << "The secret number is higher\n";
-    else if (g > r)
-        cout << "The secret number is lower\n";
-    else
-        cout << "Congratulations!\nThe secret number is " << r << endl;
+	cout<<"-------------------------"<<endl;
+	cout<<"Name		Score"<<endl;
+	cout<<"-------------------------"<<endl;
+for(int i=0;i < 4;i++){
+	cout<<name[i]<<"		"<<num[i]<<endl;
+	total = total + num[i];
+	if(num[i] > max)
+		max = num[i];
+	min=num[0];
+}
+{for(int i=0; i<4;i++)
+	if(num[i] < min)
+		min = num[i];
+}
+	cout<<"-------------------------"<<endl;
+	cout<<"Max Score= "<<max<<endl;
+	cout<<"Min Score= "<<min<<endl;
+	cout<<"Total Score = "<<total<<endl;
+	cout<<"Average Score = "<<(float)total/4<<endl;
+	
+	system("pause");
+	return 0;
 }
