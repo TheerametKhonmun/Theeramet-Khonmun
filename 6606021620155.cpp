@@ -1,25 +1,37 @@
-#include <iostream> 
-#include <string> 
-using namespace std; 
-void ParseName(string &FirstName,string &LastName, const string FullName); 
-int main() 
-{	string Name = "Stroustrup, Bjarne"; 
-	string LastName, FirstName; 
-	ParseName(FirstName,LastName,Name); 
-	Name = FirstName + " " + LastName; 
-	cout << "Name : " << Name << endl; 
-	check_char(FirstName);
-	system("pause");
-return(0); 
-} 
-void ParseName(string &FirstName,string &LastName, const string FullName) 
+#include <iostream>
+#include <iomanip>
+#include <string>
+using namespace std;
+int main()
 {
-	int I = FullName.find(","); 
-	LastName = FullName.substr(0,I); 
-	FirstName = FullName.substr(I+2,FullName.size()); 
-	 
+int num[4],total=0,max=0,min=0;
+string name[4];
+for(int i=0;i<=3;i++)
+{	cout<<"Name["<<i<<"]:";
+	cin>>name [i];
+	cout<<"Score["<<i<<"]:";
+	cin>>num[i];
 }
-void check_char(string FirstName)
-{ for(int i = 0;i<=FirstName.length();i++)
-{ cout<<FirstName.at(1)<<endl;
+	cout<<"-------------------------"<<endl;
+	cout<<"Name		Score"<<endl;
+	cout<<"-------------------------"<<endl;
+for(int i=0;i < 4;i++){
+	cout<<name[i]<<"		"<<num[i]<<endl;
+	total = total + num[i];
+	if(num[i] > max)
+		max = num[i];
+	min=num[0];
+}
+{for(int i=0; i<4;i++)
+	if(num[i] < min)
+		min = num[i];
+}
+	cout<<"-------------------------"<<endl;
+	cout<<"Max Score= "<<max<<endl;
+	cout<<"Min Score= "<<min<<endl;
+	cout<<"Total Score = "<<total<<endl;
+	cout<<"Average Score = "<<(float)total/4<<endl;
+	
+	system("pause");
+	return 0;
 }
