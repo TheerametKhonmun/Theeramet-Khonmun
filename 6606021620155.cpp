@@ -3,7 +3,7 @@
 using namespace std;
 int main()
 {
-	cout << "Element Value Histogram\n\n";
+	cout << "Element Value Histogram\n";
 	srand(time(NULL));
 	for (int i = 0; i < 10 ; i++)
 {
